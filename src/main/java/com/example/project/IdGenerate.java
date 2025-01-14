@@ -23,12 +23,10 @@ public class IdGenerate
     } 
     //must reset the currentId back to 99
 
-    public static String generateID()
+    public static void generateID()
     {
-        Integer incrementedCurrent = (Integer.parseInt(currentId) + 1);
-        currentId = incrementedCurrent.toString();
-
-        return currentId;
+        int incrementedCurrent = (Integer.parseInt(currentId) + 1);
+        currentId = Integer.toString(incrementedCurrent);
     } 
     //generates a new id, when called it will increment the currentId by 1.. Hint pay attention to data type of currentId
 }

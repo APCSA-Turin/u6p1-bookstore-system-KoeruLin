@@ -6,7 +6,7 @@ public class User
 
     private String name;
     private String Id;
-    private Book[] book;
+    private Book[] book = new Book[5];
 
     //requires 1 contructor with two parameters that will initialize the name and id
 
@@ -50,9 +50,11 @@ public class User
     {
         String info = "";
 
-        for (int i = 0; i > book.length; i++)
+        for (int i = 0; i < book.length; i++)
         {
-            info += (book[i] == null) ? "empty\n" : book[i].getTitle() + "\n"; 
+            info += (book[i] == null) ? "empty\n" : 
+            "Title: " + book[i].getTitle() + ", " + "Author: " + book[i].getAuthor() + ", " + "Year: " + book[i].getYearPublished()
+            + ", " + "ISBN: " + book[i].getIsbn() + ", " + "Quantity: " + book[i].getQuantity() + "\n"; 
         }
 
         return info;
@@ -60,7 +62,7 @@ public class User
 
     public String userInfo()
     {
-        return  "Name: " + name + "\n" + "ID: " + IdGenerate.generateID() + "\n" + "Books:\n" + bookListInfo();
+        return  "Name: " + name + "\n" + "Id: " + IdGenerate.getCurrentId() + "\n" + "Books: \n" + bookListInfo();
     } 
     //returns  "Name: []\nID: []\nBooks:\n[]"   
 }
