@@ -4,7 +4,7 @@ public class User
 {
     private String name;
     private String Id;
-    private Book[] book = new Book[5];
+    public Book[] book = new Book[5];
 
     public User(String name, String id)
     {

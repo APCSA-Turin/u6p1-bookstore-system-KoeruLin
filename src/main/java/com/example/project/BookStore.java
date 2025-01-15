@@ -2,8 +2,8 @@ package com.example.project;
 
 public class BookStore
 {
-    private Book[] books = new Book[0];
-    private User[] users = new User[10];
+    public Book[] books = new Book[0];
+    public User[] users = new User[10];
 
     public BookStore()
     {
