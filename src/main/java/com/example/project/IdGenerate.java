@@ -8,8 +8,6 @@ public class IdGenerate
     public IdGenerate()
     {
     }
-    
-    //requires 1 private attribute String currentId. You must initialize it to 99
 
     //requires one empty constructor
     public static String getCurrentId()
@@ -21,12 +19,14 @@ public class IdGenerate
     {
         currentId = "99";
     } 
-    //must reset the currentId back to 99
+    //reset the currentId back to 99
 
     public static void generateID()
     {
         int incrementedCurrent = (Integer.parseInt(currentId) + 1);
         currentId = Integer.toString(incrementedCurrent);
     } 
-    //generates a new id, when called it will increment the currentId by 1.. Hint pay attention to data type of currentId
+    //generates a new id, when called it will increment the currentId by 1
+    // converts currentId to a int so it can be incremented before turning back into a string
+
 }

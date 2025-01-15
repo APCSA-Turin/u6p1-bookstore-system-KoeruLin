@@ -9,10 +9,6 @@ public class BookStore
     {
     }
 
-    //requires at least 2 attributes Book[] books, User[] users (initialized to an empty array of 10 max users) 
-
-    //requires 1 empty constructor
-
     public User[] getUsers()
     {
         return users;
@@ -39,6 +35,7 @@ public class BookStore
             }
         }
     } 
+    // sets the earliest null value in users array to user
 
     public void removeUser(User user)
     {
@@ -52,6 +49,7 @@ public class BookStore
             }
         }
     }
+    // removes user from user array by setting it to null and consolidates it in the process
 
     public void consolidateUsers()
     {
@@ -69,6 +67,7 @@ public class BookStore
 
         users = newUser;  
     }
+    //brings all null values to the end of the array for users array
 
     public void consolidateBooks()
     {
@@ -86,6 +85,7 @@ public class BookStore
 
         users = newBook;  
     }
+    //brings all null values to the end for books array
 
     public void addBook(Book book)
     {
@@ -100,6 +100,7 @@ public class BookStore
 
         books = newBook;
     }
+    //adds a book to books array, increases array size
 
     public void insertBook(Book book, int index)
     {
@@ -131,6 +132,7 @@ public class BookStore
                 
         books = newBook;  
     }
+    //inserts book in books array at a specific index, increases array size
 
     public void removeBook(Book book)
     {
@@ -170,34 +172,6 @@ public class BookStore
             consolidateBooks();
         }
     }
-
-    public String bookStoreUserInfo()
-    {
-        String info = "";
-        for(int i = 0; i < books.length; i++)
-        {
-            info += books[i].bookInfo() + "\n";
-        }
-        return info;
-    } //you are not tested on this method but use it for debugging purposes
-
-    public static void main(String[] args)
-    {
-        BookStore store = new BookStore(); 
-        Book b1 = new Book("The Great Gatsby","Scott Fitzgerald", 1925, "979-8351145013",3);
-        Book b2 = new Book("The Outliers", "Malcolm Gladwell",2008,"978-0316017930",1);
-        Book b3 = new Book("1984", "George Orwell", 1949, "978-0451524935", 5);
-        Book b4 = new Book("Brave New World", "Aldous Huxley", 1932, "978-0060850524", 3);
-        Book b5 = new Book("Test","Author",1900, "1234", 1);
-        store.addBook(b1);
-        store.addBook(b4);
-        store.insertBook(b2, 1);
-        store.insertBook(b3,2);
-        store.insertBook(b5,4);
-
-        for(Book book : store.books)
-        {
-            System.out.println(book);
-        }
-    }
+    //reduces the book's quantity by one, if quantity is zero then book is removed from books array
+    //decreases array size
 }
