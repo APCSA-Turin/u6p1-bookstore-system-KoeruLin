@@ -89,6 +89,8 @@ public class BookStore
 
     public void addBook(Book book)
     {
+        // makes a new array that is length + 1 and copies everything from 
+        //books into new array along with the book variable
         Book[] newBook = new Book[books.length + 1];
         
         for(int i = 0; i < books.length; i++)
@@ -103,9 +105,10 @@ public class BookStore
     //adds a book to books array, increases array size
 
     public void insertBook(Book book, int index)
-    {
+    { 
         Book[] newBook = new Book[books.length + 1];
 
+        // checks if the index is the final index in the newBook
         if(index == newBook.length - 1)
         {
             for(int i = 0; i < books.length; i++)
@@ -138,6 +141,7 @@ public class BookStore
     {
         boolean removed = false;
 
+        //checks if that specific book's quantity is 0
         for(int i = 0; i < books.length; i++)
         {
             if(books[i] == book)
@@ -154,6 +158,7 @@ public class BookStore
             }
         }
 
+        // if the book's quantity is at 0 the book is removed from the array
         if(removed)
         {
             Book[] newBook = new Book[books.length - 1];
